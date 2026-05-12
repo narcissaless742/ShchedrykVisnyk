@@ -1,0 +1,1549 @@
+/* ============================================================
+   Щедрий вісник 2025 — UI Kit / Preview Site
+   Бренд-токени БО «Благодійний Фонд Щедрик»
+   ============================================================ */
+
+/* --- Inter (body / UI / numbers) — per brendbook --- */
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/Inter-Regular.ttf") format("truetype");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/Inter-Medium.ttf") format("truetype");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/Inter-Bold.ttf") format("truetype");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/Inter-ExtraBold.ttf") format("truetype");
+  font-weight: 800; font-style: normal; font-display: swap;
+}
+
+/* --- e-Ukraine Head (headings) — per brendbook --- */
+@font-face {
+  font-family: "e-Ukraine Head";
+  src: url("fonts/e-UkraineHead-Regular.ttf") format("truetype");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "e-Ukraine Head";
+  src: url("fonts/e-UkraineHead-Medium.ttf") format("truetype");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "e-Ukraine Head";
+  src: url("fonts/e-UkraineHead-Bold.ttf") format("truetype");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+:root {
+  /* --- Бренд-палітра (зведена з брендбуком, ст. «кольорова палітра» / «кольори бренду») --- */
+  --sky:        #60C5E5;  /* небесно-блакитний (HEX з брендбуку) */
+  --sky-deep:   #00A5D6;  /* ніжно-синій (HEX з брендбуку) */
+  --sky-soft:   #D9F0F7;  /* м'яка плашка (виведена) */
+  --sky-pale:   #EEF8FB;  /* фон карток (виведена) */
+  --sun:        #FEDA36;  /* сонячно-жовтий (HEX з брендбуку) */
+  --black:      #100C08;  /* чорний з брендбуку */
+  --navy:       #0E223F;  /* темно-синя плашка (наш виведений варіант — для верстки) */
+
+  --ink:        #1A1A1A;
+  --graphite:   #333333;
+  --muted:      #6B6B6B;
+  --hair:       #D0D0D0;
+  --paper:      #FFFFFF;
+
+  /* --- Палітра напрямків --- */
+  --acc-fslc:   #F2A93B;  /* помаранчевий */
+  --acc-wash:   #2EA7C8;  /* блакитний */
+  --acc-prot:   #7CC576;  /* зелений */
+  --acc-shel:   #C97A56;  /* теракотовий */
+
+  /* --- Типографіка (брендбук: Inter тіло, e-Ukraine Head заголовки) --- */
+  --font-body: "Inter", "Segoe UI", Arial, sans-serif;
+  --font-head: "e-Ukraine Head", "Inter", "Segoe UI", Arial, sans-serif;
+
+  /* --- Ритм --- */
+  --r-1: 4px;
+  --r-2: 8px;
+  --r-3: 12px;
+  --r-4: 16px;
+  --r-5: 24px;
+  --r-6: 32px;
+  --r-7: 48px;
+  --r-8: 64px;
+  --r-9: 96px;
+}
+
+/* ============================================================
+   Reset / base
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img { display: block; max-width: 100%; }
+
+a { color: var(--sky-deep); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ============================================================
+   Layout
+   ============================================================ */
+
+.page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--r-6) var(--r-5);
+}
+
+.section {
+  padding: var(--r-7) 0;
+  border-top: 1px solid var(--hair);
+}
+
+.section:first-of-type { border-top: 0; }
+
+.section-head {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: var(--r-5);
+  margin-bottom: var(--r-6);
+  align-items: baseline;
+}
+
+.section-head h2 {
+  font-family: var(--font-head);
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.section-head p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 560px;
+}
+
+@media (max-width: 768px) {
+  .section-head { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   Hero
+   ============================================================ */
+
+.hero {
+  position: relative;
+  padding: var(--r-8) var(--r-5) var(--r-7);
+  background:
+    radial-gradient(circle at 88% 14%, var(--sun) 0 70px, transparent 71px),
+    linear-gradient(180deg, var(--sky-pale) 0%, #fff 100%);
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  bottom: -160px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: var(--sky);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero img.logo {
+  height: 56px;
+  margin-bottom: var(--r-5);
+}
+
+.kicker {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sky-deep);
+}
+
+.hero h1 {
+  font-family: var(--font-head);
+  font-size: clamp(34px, 5vw, 56px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: var(--r-2) 0 var(--r-3);
+  max-width: 760px;
+}
+
+.hero p.lead {
+  font-size: 18px;
+  color: var(--graphite);
+  max-width: 620px;
+  margin: 0;
+}
+
+/* ============================================================
+   Nav
+   ============================================================ */
+
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--hair);
+}
+
+.topnav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--r-3) var(--r-5);
+  display: flex;
+  align-items: center;
+  gap: var(--r-5);
+  font-size: 14px;
+}
+
+.topnav img { height: 28px; }
+.topnav .title { font-weight: 700; }
+.topnav nav { display: flex; gap: var(--r-4); margin-left: auto; flex-wrap: wrap; }
+.topnav nav a { color: var(--graphite); }
+.topnav nav a.active { color: var(--sky-deep); font-weight: 700; }
+
+/* ============================================================
+   Swatches (color palette)
+   ============================================================ */
+
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--r-3);
+}
+
+.swatch {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--hair);
+  background: #fff;
+}
+
+.swatch .chip {
+  height: 110px;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--r-3);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.swatch .meta {
+  padding: var(--r-3);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--r-2);
+}
+
+.swatch .meta strong { font-weight: 700; }
+.swatch .meta code {
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.chip.on-dark { color: #fff; }
+.chip.on-light { color: var(--ink); }
+
+.swatch-group-title {
+  grid-column: 1 / -1;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin: var(--r-3) 0 0;
+}
+.swatch-group-title:first-child { margin-top: 0; }
+
+/* ============================================================
+   Typography samples
+   ============================================================ */
+
+.type-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: var(--r-5);
+  align-items: baseline;
+  padding: var(--r-4) 0;
+  border-bottom: 1px solid var(--hair);
+}
+
+.type-grid:last-child { border-bottom: 0; }
+
+.type-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.type-label small {
+  display: block;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.type-h1 { font-family: var(--font-head); font-size: 48px; font-weight: 700; line-height: 1.05; letter-spacing: -0.01em; }
+.type-h2 { font-family: var(--font-head); font-size: 32px; font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; }
+.type-h3 { font-family: var(--font-head); font-size: 20px; font-weight: 700; line-height: 1.25; }
+.type-lead { font-size: 18px; line-height: 1.45; color: var(--graphite); }
+.type-body { font-size: 15px; line-height: 1.6; }
+.type-caption { font-size: 13px; color: var(--muted); font-style: italic; }
+.type-kicker {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sky-deep);
+}
+
+@media (max-width: 768px) {
+  .type-grid { grid-template-columns: 1fr; gap: var(--r-2); }
+  .type-h1 { font-size: 34px; }
+  .type-h2 { font-size: 26px; }
+}
+
+/* ============================================================
+   Logo gallery
+   ============================================================ */
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--r-3);
+}
+
+.logo-tile {
+  position: relative;
+  border-radius: 8px;
+  border: 1px solid var(--hair);
+  overflow: hidden;
+  background: #fff;
+}
+.logo-tile.dark { background: var(--navy); border-color: var(--navy); }
+.logo-tile.sky  { background: var(--sky); border-color: var(--sky); }
+.logo-tile .frame {
+  height: 130px;
+  display: flex; align-items: center; justify-content: center;
+  padding: var(--r-4);
+}
+.logo-tile img { max-height: 80px; max-width: 80%; object-fit: contain; }
+.logo-tile .caption {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: var(--r-2) var(--r-3);
+  border-top: 1px solid var(--hair);
+  background: #fff;
+}
+.logo-tile.dark .caption, .logo-tile.sky .caption { background: #fff; }
+
+/* ============================================================
+   Decorative motifs
+   ============================================================ */
+
+.motif-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--r-4);
+}
+
+.motif {
+  position: relative;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid var(--hair);
+  height: 220px;
+  overflow: hidden;
+}
+
+.motif .label {
+  position: absolute;
+  bottom: var(--r-3);
+  left: var(--r-3);
+  right: var(--r-3);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--muted);
+  background: rgba(255,255,255,0.9);
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  width: max-content;
+  max-width: calc(100% - 0px);
+}
+
+.motif-sun-circle::before {
+  content: "";
+  position: absolute;
+  top: -30px; right: -30px;
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  background: var(--sun);
+}
+
+.motif-sky-circle::before {
+  content: "";
+  position: absolute;
+  top: 40%; left: 50%;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: var(--sky-deep);
+  transform: translate(-50%, -50%);
+}
+
+.motif-yellow-ring::before {
+  content: "";
+  position: absolute;
+  top: 22px; right: 22px;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  border: 6px solid var(--sun);
+}
+
+.motif-sky-rail {
+  background:
+    linear-gradient(180deg, transparent 0 calc(100% - 8px), var(--sky-deep) calc(100% - 8px) calc(100% - 4px), transparent calc(100% - 4px));
+}
+.motif-sky-rail::before {
+  content: "";
+  position: absolute;
+  left: 16px; top: 18px; bottom: 50px;
+  width: 3px;
+  background: var(--sky-deep);
+}
+
+.motif-sky-split {
+  background: linear-gradient(90deg, #fff 0 58%, var(--sky-deep) 58% 100%);
+}
+
+.motif-gradient-cover {
+  background: linear-gradient(180deg, transparent 0%, var(--sky) 60%, var(--sky-deep) 100%);
+}
+
+.motif-rule::after {
+  content: "";
+  position: absolute;
+  left: 22px; top: 50%;
+  width: 60px; height: 4px;
+  background: var(--sun);
+  transform: translateY(-50%);
+}
+
+/* Хвиляста лінія (бачимо в обкладинці грамоти/сертифіката) */
+.motif-wave {
+  background: #fff;
+}
+.motif-wave::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 0 70%, var(--sky) 0 50px, transparent 51px),
+    radial-gradient(circle at 60px 70%, transparent 50px, var(--sky) 51px 110px, transparent 111px),
+    radial-gradient(circle at 180px 70%, var(--sky) 0 50px, transparent 51px);
+  opacity: 0;
+}
+.motif-wave::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 30%;
+  height: 60px;
+  background:
+    radial-gradient(ellipse 60px 30px at 30px 50%, var(--sky-deep) 99%, transparent 100%),
+    radial-gradient(ellipse 60px 30px at 150px 50%, var(--sky) 99%, transparent 100%),
+    radial-gradient(ellipse 60px 30px at 270px 50%, var(--sky-deep) 99%, transparent 100%);
+  mask: linear-gradient(180deg, #000 50%, transparent 50%);
+  -webkit-mask: linear-gradient(180deg, #000 50%, transparent 50%);
+}
+
+/* Чверть-круг у куті (бачимо на бейджі — жовтий квадрант) */
+.motif-quarter {
+  background: #fff;
+}
+.motif-quarter::before {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 80px; height: 80px;
+  border-top-right-radius: 100%;
+  background: var(--sun);
+}
+.motif-quarter::after {
+  content: "";
+  position: absolute;
+  right: 0; top: 0;
+  width: 60px; height: 60px;
+  border-bottom-left-radius: 100%;
+  background: var(--sky);
+}
+
+/* Розсип точок з брендбуку (вікно для іконок-зірочок/насіння) */
+.motif-dots {
+  background: var(--sky-pale);
+}
+.motif-dots::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(var(--sky-deep) 1.5px, transparent 2px),
+    radial-gradient(var(--sun) 1.5px, transparent 2px);
+  background-size: 32px 32px, 48px 48px;
+  background-position: 0 0, 16px 24px;
+  opacity: 0.65;
+}
+
+/* Округлий бейдж-плашка з логотипом (як на айдентиці бейджа) */
+.motif-badge {
+  background:
+    linear-gradient(180deg, var(--sky) 0 55%, #fff 55% 100%);
+}
+.motif-badge::before {
+  content: "";
+  position: absolute;
+  left: 50%; top: 38px;
+  width: 76px; height: 76px;
+  border-radius: 50%;
+  background: #fff;
+  transform: translateX(-50%);
+  box-shadow: 0 6px 18px rgba(0,160,210,0.18);
+}
+.motif-badge::after {
+  content: "";
+  position: absolute;
+  left: 50%; top: 60px;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--sky);
+  transform: translateX(-50%);
+}
+
+/* Хвиля «під» заголовком (бачимо на лідерах грамот) */
+.motif-headline-wave {
+  background:
+    linear-gradient(180deg, #fff 0 60%, var(--sky-pale) 60% 100%);
+}
+.motif-headline-wave::before {
+  content: "";
+  position: absolute;
+  left: -20px; right: -20px; top: 50%;
+  height: 30px;
+  background:
+    radial-gradient(ellipse 80px 30px at 10% 0%, var(--sky) 99%, transparent 100%),
+    radial-gradient(ellipse 80px 30px at 50% 100%, var(--sky-deep) 99%, transparent 100%),
+    radial-gradient(ellipse 80px 30px at 90% 0%, var(--sky) 99%, transparent 100%);
+  mask: linear-gradient(0deg, #000 50%, transparent 50%);
+  -webkit-mask: linear-gradient(0deg, #000 50%, transparent 50%);
+  transform: translateY(-50%);
+}
+
+/* Pattern-як-акцент (вирізаний кружок патерну) */
+.motif-pattern-coin {
+  background: #fff;
+}
+.motif-pattern-coin::before {
+  content: "";
+  position: absolute;
+  right: 20px; top: 20px;
+  width: 110px; height: 110px;
+  border-radius: 50%;
+  background: var(--sky) url("patterns/pattern-cyan.png");
+  background-size: 110px 110px;
+  background-position: center;
+}
+
+/* Скоба/брекет (огороджені плашки в брендбуку — рамки навколо текстів) */
+.motif-bracket {
+  background: #fff;
+}
+.motif-bracket::before, .motif-bracket::after {
+  content: "";
+  position: absolute;
+  width: 36px; height: 36px;
+  border: 2px solid var(--ink);
+}
+.motif-bracket::before {
+  left: 22px; top: 22px;
+  border-right: 0; border-bottom: 0;
+  border-top-left-radius: 16px;
+}
+.motif-bracket::after {
+  right: 22px; bottom: 22px;
+  border-left: 0; border-top: 0;
+  border-bottom-right-radius: 16px;
+}
+
+/* ============================================================
+   Patterns (з брендбуку — 3 варіанти)
+   ============================================================ */
+
+.pattern-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--r-4);
+}
+
+.pattern-tile {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--hair);
+  background: #fff;
+}
+.pattern-tile .swatch {
+  height: 280px;
+  background-size: 240px 240px;
+  background-repeat: repeat;
+  background-position: center;
+}
+.pattern-tile.on-white .swatch { background-color: #fff; background-image: url("patterns/pattern-white.png"); }
+.pattern-tile.on-cyan  .swatch { background-color: var(--sky); background-image: url("patterns/pattern-cyan.png"); border-top-left-radius: 10px; border-top-right-radius: 10px; }
+.pattern-tile.on-black .swatch { background-color: var(--black); background-image: url("patterns/pattern-black.png"); }
+
+.pattern-tile .meta {
+  padding: var(--r-3);
+  border-top: 1px solid var(--hair);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--r-2);
+  font-size: 13px;
+}
+.pattern-tile .meta strong { font-weight: 700; }
+.pattern-tile .meta code {
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.pattern-usage {
+  margin-top: var(--r-4);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--r-3);
+  font-size: 13px;
+}
+.pattern-usage > div {
+  background: var(--sky-pale);
+  border-radius: 8px;
+  padding: var(--r-3);
+}
+.pattern-usage strong {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sky-deep);
+  margin-bottom: 4px;
+}
+
+/* ============================================================
+   Direction tags (FSLC / WASH / PROTECTION / SHELTER)
+   ============================================================ */
+
+.directions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--r-3);
+}
+
+.dir {
+  border-radius: 10px;
+  padding: var(--r-4);
+  color: #fff;
+  min-height: 140px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.dir .code {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  opacity: 0.85;
+}
+.dir .name {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.dir .desc { font-size: 12px; opacity: 0.9; line-height: 1.4; }
+
+.dir.fslc { background: var(--acc-fslc); }
+.dir.wash { background: var(--acc-wash); }
+.dir.prot { background: var(--acc-prot); }
+.dir.shel { background: var(--acc-shel); }
+
+/* ============================================================
+   Content blocks (як у Typst-варіантах)
+   ============================================================ */
+
+.blocks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--r-4);
+}
+@media (max-width: 720px) { .blocks-grid { grid-template-columns: 1fr; } }
+
+.demo-card {
+  border: 1px solid var(--hair);
+  border-radius: 10px;
+  padding: var(--r-4);
+  background: #fff;
+}
+.demo-card > .meta-tag {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--muted);
+  margin-bottom: var(--r-3);
+}
+
+/* stat-card (з variant A) */
+.stat-card {
+  background: var(--sky-pale);
+  border-radius: 6px;
+  padding: 14px 16px;
+}
+.stat-card .num {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--sky-deep);
+  line-height: 1;
+}
+.stat-card .label {
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* yellow-stat (з variant A) */
+.yellow-stat {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 14px;
+  align-items: center;
+}
+.yellow-stat .circle {
+  width: 70px; height: 70px;
+  border-radius: 50%;
+  background: var(--sun);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+}
+.yellow-stat .label { font-size: 13px; }
+
+/* big-cyan (з variant B/C) */
+.big-cyan .num {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--sky-deep);
+  line-height: 1;
+}
+.big-cyan .label { font-size: 12px; margin-top: 4px; }
+
+/* factbox (sky-soft) */
+.factbox {
+  background: var(--sky-soft);
+  border-radius: 6px;
+  padding: 14px 16px;
+}
+.factbox .row { display: flex; gap: var(--r-5); flex-wrap: wrap; }
+.factbox .row > div { min-width: 120px; }
+.factbox .k {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--sky-deep);
+}
+.factbox .v { font-weight: 700; margin-top: 2px; }
+.factbox .mission { margin-top: 10px; }
+
+/* navy-tile (Гаряча лінія) */
+.navy-tile {
+  background: var(--navy);
+  color: #fff;
+  border-radius: 8px;
+  padding: 16px 18px;
+}
+.navy-tile .k {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--sky);
+}
+.navy-tile .phones { font-size: 18px; font-weight: 700; line-height: 1.4; margin-top: 4px; }
+.navy-tile small { display:block; margin-top: 4px; opacity: 0.7; font-size: 12px; }
+
+/* cyan-rail (з variant B/C) */
+.cyan-rail {
+  border-left: 2px solid var(--sky-deep);
+  padding: 6px 10px 6px 14px;
+}
+.cyan-rail .k {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--sky-deep);
+}
+.cyan-rail .body { font-style: italic; margin-top: 4px; font-size: 14px; }
+
+/* meta-strip (з C) */
+.meta-strip {
+  border-top: 1px solid var(--sky-deep);
+  border-bottom: 1px solid var(--sky-deep);
+  padding: 12px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 16px;
+}
+.meta-strip .k {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted);
+}
+.meta-strip .v { margin-top: 4px; font-weight: 700; }
+.meta-strip .v.text { font-weight: 400; font-size: 13px; }
+
+/* ============================================================
+   Callout (інформативна плашка-нотатка)
+   ============================================================ */
+
+.callout {
+  border-left: 4px solid var(--sun);
+  background: #FFF8E0;
+  border-radius: 6px;
+  padding: var(--r-3) var(--r-4);
+  margin: var(--r-5) 0;
+  font-size: 14px;
+}
+.callout .head {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #B07A00;
+  margin-bottom: 4px;
+}
+.callout p { margin: 4px 0; }
+
+/* ============================================================
+   Type sample tiles (показуємо брендові шрифти)
+   ============================================================ */
+
+.font-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--r-4);
+  margin-top: var(--r-4);
+}
+.font-tile {
+  border: 1px solid var(--hair);
+  border-radius: 10px;
+  padding: var(--r-4);
+  background: #fff;
+}
+.font-tile .glyph {
+  font-size: 56px;
+  line-height: 1;
+  font-weight: 700;
+  margin-bottom: var(--r-2);
+}
+.font-tile .name {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.font-tile .meta {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ============================================================
+   Variant showcase (tabs + spread gallery)
+   ============================================================ */
+
+.variants-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--r-3);
+  margin: var(--r-5) 0 var(--r-6);
+}
+
+.variants-tab {
+  display: block;
+  border: 1px solid var(--hair);
+  border-radius: 10px;
+  padding: var(--r-4);
+  background: #fff;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+  font-family: inherit;
+  color: var(--ink);
+  text-decoration: none;
+}
+.variants-tab:hover {
+  border-color: var(--sky-deep);
+  text-decoration: none;
+}
+.variants-tab.active {
+  border-color: var(--sky-deep);
+  background: var(--sky-pale);
+  box-shadow: 0 4px 16px rgba(0,165,214,0.12);
+  transform: translateY(-2px);
+}
+
+.variants-tab .letter {
+  font-family: var(--font-head);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--sky-deep);
+  line-height: 1;
+}
+.variants-tab .name {
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 6px;
+}
+.variants-tab .tag {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+@media (max-width: 720px) {
+  .variants-tabs { grid-template-columns: repeat(2, 1fr); }
+}
+
+.variant-panel {
+  display: none;
+}
+.variant-panel.active {
+  display: block;
+}
+
+.variant-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--r-4);
+  align-items: end;
+  margin-bottom: var(--r-4);
+}
+
+.variant-head h2 {
+  font-family: var(--font-head);
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.variant-head p {
+  margin: var(--r-2) 0 0;
+  color: var(--graphite);
+  max-width: 720px;
+}
+
+.variant-actions {
+  display: flex;
+  gap: var(--r-2);
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background 0.15s, border-color 0.15s;
+  font-family: inherit;
+  cursor: pointer;
+}
+.btn-primary {
+  background: var(--sky-deep);
+  color: #fff;
+}
+.btn-primary:hover { background: #008CB8; text-decoration: none; color: #fff; }
+.btn-ghost {
+  background: #fff;
+  color: var(--ink);
+  border-color: var(--hair);
+}
+.btn-ghost:hover { border-color: var(--sky-deep); text-decoration: none; }
+
+.signature-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: var(--r-3) 0 var(--r-5);
+}
+.signature-tag {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background: var(--sky-pale);
+  color: var(--sky-deep);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.spreads-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--r-3);
+}
+@media (max-width: 720px) {
+  .spreads-grid { grid-template-columns: 1fr; }
+}
+
+.spread {
+  position: relative;
+  border: 1px solid var(--hair);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f6f6f6;
+  cursor: zoom-in;
+  transition: border-color 0.15s ease;
+}
+.spread:hover {
+  border-color: var(--sky-deep);
+}
+.spread img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.spread .label {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* Lightbox modal */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(20,30,50,0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--r-5);
+  z-index: 100;
+  cursor: zoom-out;
+}
+.lightbox.open { display: flex; }
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 4px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+}
+.lightbox .close {
+  position: absolute;
+  top: var(--r-4);
+  right: var(--r-4);
+  color: #fff;
+  font-size: 28px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+/* ============================================================
+   Hero — accent version (для index.html)
+   ============================================================ */
+
+.hero-accent {
+  position: relative;
+  padding: 0;
+  background: var(--paper);
+  overflow: hidden;
+  border-bottom: 1px solid var(--hair);
+}
+
+.hero-accent-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 0;
+  align-items: stretch;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.hero-accent .text-col {
+  padding: var(--r-7) var(--r-5) var(--r-7);
+}
+
+.hero-accent .visual-col {
+  background:
+    radial-gradient(circle at 80% 30%, var(--sun) 0 80px, transparent 81px),
+    linear-gradient(180deg, var(--sky) 0%, var(--sky-deep) 100%);
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--r-5);
+}
+
+.hero-accent .visual-col::before {
+  content: "";
+  position: absolute;
+  left: -30px; bottom: -40px;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: var(--sun);
+  opacity: 0.85;
+}
+
+.hero-accent .visual-col::after {
+  content: "";
+  position: absolute;
+  top: 20%; right: -60px;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.18;
+}
+
+.hero-accent .visual-col img {
+  position: relative;
+  z-index: 1;
+  max-width: 90%;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.15));
+}
+
+.hero-accent .kicker { color: var(--sky-deep); }
+
+.hero-accent h1 {
+  font-family: var(--font-head);
+  font-size: clamp(36px, 4.5vw, 60px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  margin: var(--r-2) 0 var(--r-3);
+}
+
+.hero-accent .subline {
+  font-size: 18px;
+  color: var(--graphite);
+  line-height: 1.5;
+  margin: 0 0 var(--r-4);
+  max-width: 540px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--r-2);
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .hero-accent-inner { grid-template-columns: 1fr; }
+  .hero-accent .visual-col { min-height: 280px; }
+}
+
+/* ============================================================
+   Stats — большие цифры о проекте
+   ============================================================ */
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--r-3);
+  margin: var(--r-6) 0;
+}
+
+.stat-block {
+  border: 1px solid var(--hair);
+  border-radius: 12px;
+  padding: var(--r-4);
+  background: #fff;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.stat-block:hover {
+  border-color: var(--sky-deep);
+  transform: translateY(-2px);
+}
+
+.stat-block .num {
+  font-family: var(--font-head);
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--sky-deep);
+  line-height: 1;
+  margin-bottom: var(--r-2);
+}
+.stat-block.accent .num { color: var(--ink); }
+.stat-block.accent { background: var(--sun); border-color: var(--sun); }
+
+.stat-block .label {
+  font-size: 13px;
+  color: var(--graphite);
+  line-height: 1.4;
+}
+
+@media (max-width: 720px) {
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ============================================================
+   Big card navigation (для index — заметные плитки)
+   ============================================================ */
+
+.bignav {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--r-4);
+  margin: var(--r-5) 0;
+}
+
+.bignav .item {
+  position: relative;
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--hair);
+  padding: 0;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.bignav .item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0,165,214,0.18);
+  text-decoration: none;
+}
+
+.bignav .item .top {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  min-height: 160px;
+}
+
+.bignav .item .bot {
+  padding: var(--r-4);
+  border-top: 1px solid var(--hair);
+  background: #fff;
+}
+
+.bignav .item h3 {
+  font-family: var(--font-head);
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+.bignav .item p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--graphite);
+  line-height: 1.5;
+}
+.bignav .item .arrow {
+  margin-top: var(--r-2);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sky-deep);
+}
+
+/* Top backgrounds for each card */
+.bignav-uikit .top {
+  background:
+    linear-gradient(135deg, var(--sky-pale) 0%, var(--sky-soft) 100%);
+}
+.bignav-uikit .top::before {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; height: 80%;
+  background:
+    radial-gradient(var(--sky-deep) 2px, transparent 2.5px),
+    radial-gradient(var(--sun) 2px, transparent 2.5px);
+  background-size: 28px 28px, 40px 40px;
+  background-position: 0 0, 14px 20px;
+  opacity: 0.4;
+}
+.bignav-uikit .top::after {
+  content: "";
+  position: absolute;
+  top: 30px; right: 30px;
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  background: var(--sun);
+}
+
+.bignav-variants .top {
+  background: var(--paper);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  padding: 12px;
+}
+.bignav-variants .top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--hair);
+}
+
+.bignav-process .top {
+  background: var(--navy);
+  position: relative;
+}
+.bignav-process .top::before {
+  content: "";
+  position: absolute;
+  inset: 20%;
+  background:
+    linear-gradient(180deg, var(--sky) 0 12px, transparent 12px) 0 0,
+    linear-gradient(180deg, var(--sun) 0 12px, transparent 12px) 0 28px,
+    linear-gradient(180deg, var(--sky-deep) 0 12px, transparent 12px) 0 56px,
+    linear-gradient(180deg, var(--sky) 0 12px, transparent 12px) 0 84px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.bignav-cover .top {
+  background:
+    linear-gradient(180deg, transparent 0%, var(--sky) 60%, var(--sky-deep) 100%);
+}
+.bignav-cover .top::before {
+  content: "Щ";
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-head);
+  font-size: 120px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+@media (max-width: 720px) {
+  .bignav { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   Mini palette teaser
+   ============================================================ */
+
+.palette-teaser {
+  display: flex;
+  gap: 4px;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 60px;
+  margin: var(--r-3) 0;
+}
+.palette-teaser > div {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 6px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   Timeline (для process.html)
+   ============================================================ */
+
+.timeline {
+  position: relative;
+  padding-left: 28px;
+  margin: var(--r-5) 0;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--sky);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: var(--r-5);
+}
+.timeline-item:last-child { padding-bottom: 0; }
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--sky-deep);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px var(--sky-deep);
+}
+.timeline-item.done::before { background: var(--sky-deep); box-shadow: 0 0 0 2px var(--sky-deep); }
+.timeline-item.now::before { background: var(--sun); box-shadow: 0 0 0 2px var(--sun); }
+.timeline-item.next::before { background: #fff; box-shadow: 0 0 0 2px var(--hair); }
+
+.timeline-item .date {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.timeline-item.now .date { color: #B07A00; }
+
+.timeline-item h3 {
+  font-family: var(--font-head);
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+.timeline-item p {
+  margin: 0;
+  color: var(--graphite);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.timeline-item ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  color: var(--graphite);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.timeline-item ul li { margin-bottom: 2px; }
+
+/* Materials list */
+.materials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--r-3);
+  margin: var(--r-4) 0;
+}
+.materials .mat {
+  border: 1px solid var(--hair);
+  border-radius: 10px;
+  padding: var(--r-4);
+  background: #fff;
+}
+.materials .mat .icon {
+  font-size: 28px;
+  margin-bottom: var(--r-2);
+}
+.materials .mat h4 {
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+.materials .mat p {
+  margin: 0 0 var(--r-2);
+  font-size: 13px;
+  color: var(--graphite);
+}
+.materials .mat code {
+  display: block;
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  word-break: break-all;
+}
+
+@media (max-width: 720px) {
+  .materials { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+
+footer.site {
+  border-top: 1px solid var(--hair);
+  padding: var(--r-6) var(--r-5);
+  font-size: 13px;
+  color: var(--muted);
+}
+footer.site .inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--r-4);
+  flex-wrap: wrap;
+}

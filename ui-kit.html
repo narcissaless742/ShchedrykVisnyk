@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UI Kit — Щедрий вісник 2025</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topnav">
+  <div class="topnav-inner">
+    <img src="logos/Shchedryk_logo_fin_color_horizont_ua.svg" alt="Щедрик">
+    <span class="title">Щедрий вісник 2025</span>
+    <nav>
+      <a href="index.html">Огляд</a>
+      <a href="ui-kit.html" class="active">UI Kit</a>
+      <a href="variants.html">Варіанти стилістики</a>
+      <a href="process.html">Хід роботи</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <img class="logo" src="logos/Shchedryk_logo_fin_color_horizont_ua.svg" alt="Логотип «Щедрик»">
+    <span class="kicker">UI Kit · Брендова система</span>
+    <h1>Щедрий вісник 2025 — бренд-система для верстки звіту</h1>
+    <p class="lead">
+      Кольори, типографіка, логотип, декоративні елементи та контент-блоки
+      БО «Благодійний Фонд Щедрик». Усе, що використовується у брошурі А4
+      альбом, на одній сторінці — щоб синхронізуватися перед стартом.
+    </p>
+  </div>
+</section>
+
+<div class="page">
+
+  <!-- ============================================================
+       КОЛІР
+       ============================================================ -->
+  <section class="section" id="colors">
+    <div class="section-head">
+      <h2>Колір</h2>
+      <p>Основа — небесно-блакитна гама «Щедрика». Жовтий і темно-синій — другорядні брендові акценти. Внизу — палітра напрямків роботи (FSLC, WASH, PROTECTION, SHELTER) для діаграми с.3.</p>
+    </div>
+
+    <div class="swatch-grid">
+
+      <div class="swatch-group-title">Брендові (за брендбуком)</div>
+
+      <div class="swatch">
+        <div class="chip on-dark" style="background: #60C5E5;">Sky</div>
+        <div class="meta"><strong>Небесно-блакитний</strong><code>#60C5E5</code></div>
+      </div>
+      <div class="swatch">
+        <div class="chip on-dark" style="background: #00A5D6;">Sky deep</div>
+        <div class="meta"><strong>Ніжно-синій</strong><code>#00A5D6</code></div>
+      </div>
+      <div class="swatch">
+        <div class="chip on-light" style="background: #FEDA36;">Sun</div>
+        <div class="meta"><strong>Сонячно-жовтий</strong><code>#FEDA36</code></div>
+      </div>
+      <div class="swatch">
+        <div class="chip on-light" style="background: #FFFFFF; border-bottom: 1px solid var(--hair);">Paper</div>
+        <div class="meta"><strong>Білий</strong><code>#FFFFFF</code></div>
+      </div>
+      <div class="swatch">
+        <div class="chip on-dark" style="background: #100C08;">Black</div>
+        <div class="meta"><strong>Чорний</strong><code>#100C08</code></div>
+      </div>
+
+      <div class="swatch-group-title">Виведені (для тонів, плашок, тіл тексту)</div>
+
+      <div class="swatch">
+        <div class="chip on-light" style="background: #D9F0F7;">Sky soft</div>
+        <div class="meta"><strong>Sky soft</strong><code>#D9F0F7</code></div>
+      </div>
+      <div class="swatch">
+        <div class="chip on-light" style="background: #EEF8FB;">Sky pale</div>
+        <div class="meta"><strong>Sky pale</strong><code>#EEF8FB</code></div>
+      </div>
+      <div class="swatch">
+        <div class="chip on-dark" style="background: #0E223F;">Navy</div>
+        <div class="meta"><strong>Navy</strong><code>#0E223F</code></div>
+      </div>
+
+      <div class="swatch-group-title">Нейтральні</div>
+
+      <div class="swatch">
+        <div class="chip on-dark" style="background: #1A1A1A;">Ink</div>
+        <div class="meta"><strong>Ink</strong><code>#1A1A1A</code></div>
+      </div>
+      <div class="swatch">
+        <div class="chip on-dark" style="background: #333333;">Graphite</div>
+        <div class="meta"><strong>Graphite</strong><code>#333333</code></div>
+      </div>
+      <div class="swatch">
+        <div class="chip on-dark" style="background: #6B6B6B;">Muted</div>
+        <div class="meta"><strong>Muted</strong><code>#6B6B6B</code></div>
+      </div>
+      <div class="swatch">
+        <div class="chip on-light" style="background: #D0D0D0;">Hair</div>
+        <div class="meta"><strong>Hair</strong><code>#D0D0D0</code></div>
+      </div>
+      <div class="swatch">
+        <div class="chip on-light" style="background: #FFFFFF; border-bottom: 1px solid var(--hair);">Paper</div>
+        <div class="meta"><strong>Paper</strong><code>#FFFFFF</code></div>
+      </div>
+
+      <div class="swatch-group-title">Напрямки роботи (для діаграми с.3)</div>
+
+      <div class="swatch">
+        <div class="chip on-dark" style="background: #F2A93B;">FSLC</div>
+        <div class="meta"><strong>FSLC</strong><code>#F2A93B</code></div>
+      </div>
+      <div class="swatch">
+        <div class="chip on-dark" style="background: #2EA7C8;">WASH</div>
+        <div class="meta"><strong>WASH</strong><code>#2EA7C8</code></div>
+      </div>
+      <div class="swatch">
+        <div class="chip on-dark" style="background: #7CC576;">PROTECTION</div>
+        <div class="meta"><strong>PROTECTION</strong><code>#7CC576</code></div>
+      </div>
+      <div class="swatch">
+        <div class="chip on-dark" style="background: #C97A56;">SHELTER</div>
+        <div class="meta"><strong>SHELTER</strong><code>#C97A56</code></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ТИПОГРАФІКА
+       ============================================================ -->
+  <section class="section" id="typography">
+    <div class="section-head">
+      <h2>Типографіка</h2>
+      <p>Два брендових шрифти з брендбуку, обидва вільної ліцензії: <strong>Inter</strong> для тіла, чисел і UI; <strong>e-Ukraine Head</strong> для заголовків розворотів. Декоративний <em>Fashion Boutique</em> (комерційний) у цьому проєкті не використовуємо. Зразки нижче рендеряться фактичними шрифтами з <code>assets/fonts/</code>.</p>
+    </div>
+
+    <div class="font-grid">
+      <div class="font-tile" style="border-color: var(--sky-deep);">
+        <div class="glyph" style="font-family: 'Inter', sans-serif; font-weight: 800;">Aa</div>
+        <div class="name" style="font-family: 'Inter', sans-serif; font-weight: 700;">Inter</div>
+        <div class="meta">Тіло, числа, UI — Regular / Medium / Bold / ExtraBold</div>
+        <div class="meta" style="margin-top: 8px; font-family: 'Inter', sans-serif; color: var(--ink); font-size: 14px;">
+          <span style="font-weight: 800;">800 ExtraBold</span> ·
+          <span style="font-weight: 700;">700 Bold</span> ·
+          <span style="font-weight: 500;">500 Medium</span> ·
+          <span style="font-weight: 400;">400 Regular</span>
+        </div>
+      </div>
+      <div class="font-tile" style="border-color: var(--sky-deep);">
+        <div class="glyph" style="font-family: 'e-Ukraine Head', sans-serif; font-weight: 700;">Aa</div>
+        <div class="name" style="font-family: 'e-Ukraine Head', sans-serif; font-weight: 700;">e-Ukraine Head</div>
+        <div class="meta">Заголовки розворотів — Regular / Medium / Bold</div>
+        <div class="meta" style="margin-top: 8px; font-family: 'e-Ukraine Head', sans-serif; color: var(--ink); font-size: 14px;">
+          <span style="font-weight: 700;">700 Bold</span> ·
+          <span style="font-weight: 500;">500 Medium</span> ·
+          <span style="font-weight: 400;">400 Regular</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="type-grid">
+      <div class="type-label">H1 / Обкладинка<small>Roboto Bold · 48–56 pt</small></div>
+      <div class="type-h1">Щедрий вісник 2025</div>
+    </div>
+
+    <div class="type-grid">
+      <div class="type-label">H2 / Розворот<small>Roboto Bold · 22–32 pt</small></div>
+      <div class="type-h2">Ключові результати діяльності</div>
+    </div>
+
+    <div class="type-grid">
+      <div class="type-label">H3 / Підзаголовок<small>Roboto Bold · 14–20 pt</small></div>
+      <div class="type-h3">Центр Допомоги в Корабельному районі</div>
+    </div>
+
+    <div class="type-grid">
+      <div class="type-label">Kicker / Надзаголовок<small>Roboto Bold · 9–12 pt · tracking 0.16em</small></div>
+      <div class="type-kicker">Партнер · Oxfam</div>
+    </div>
+
+    <div class="type-grid">
+      <div class="type-label">Lead / Врізка<small>Roboto Regular · 13–18 pt</small></div>
+      <div class="type-lead">
+        У 2025 БО «Щедрик» реалізував більше 9 проєктів — від підтримки
+        сільського господарства до перекваліфікації. Загалом вдалося залучити
+        допомоги на суму понад 140 мільйонів гривень.
+      </div>
+    </div>
+
+    <div class="type-grid">
+      <div class="type-label">Body / Основний текст<small>Roboto Regular · 10–15 pt</small></div>
+      <div class="type-body">
+        Благодійна Організація «Благодійний Фонд Щедрик» — неурядова організація,
+        що здійснює проєктну операційну діяльність в інтересах суспільства або
+        окремих категорій осіб, надає матеріальну, фінансову, організаційну,
+        психосоціальну та інші види допомоги людям, які її потребують.
+      </div>
+    </div>
+
+    <div class="type-grid">
+      <div class="type-label">Caption / Підпис<small>Roboto Italic · 8–13 pt · колір muted</small></div>
+      <div class="type-caption">Команда БО «Щедрик» на стратегічній сесії, грудень 2025.</div>
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+       ЛОГОТИП
+       ============================================================ -->
+  <section class="section" id="logo">
+    <div class="section-head">
+      <h2>Логотип</h2>
+      <p>12 файлів у трьох версіях кольору (color · black · white), у двох орієнтаціях (горизонтальна · вертикальна) і двох мовах (UA · EN). Усі формати: SVG, PNG, EPS, JPEG, PDF, AI.</p>
+    </div>
+
+    <div class="logo-grid">
+
+      <div class="logo-tile">
+        <div class="frame"><img src="logos/Shchedryk_logo_fin_color_horizont_ua.svg" alt="Color · horizontal · UA"></div>
+        <div class="caption">Color · horizontal · UA</div>
+      </div>
+      <div class="logo-tile">
+        <div class="frame"><img src="logos/Shchedryk_logo_fin_color_vertical_ua.svg" alt="Color · vertical · UA"></div>
+        <div class="caption">Color · vertical · UA</div>
+      </div>
+      <div class="logo-tile">
+        <div class="frame"><img src="logos/Shchedryk_logo_fin_color_horizont_en.svg" alt="Color · horizontal · EN"></div>
+        <div class="caption">Color · horizontal · EN</div>
+      </div>
+      <div class="logo-tile">
+        <div class="frame"><img src="logos/Shchedryk_logo_fin_black_horizont_ua.svg" alt="Black · horizontal · UA"></div>
+        <div class="caption">Black · horizontal · UA</div>
+      </div>
+      <div class="logo-tile">
+        <div class="frame"><img src="logos/Shchedryk_logo_fin_black_vertical_ua.svg" alt="Black · vertical · UA"></div>
+        <div class="caption">Black · vertical · UA</div>
+      </div>
+
+      <div class="logo-tile dark">
+        <div class="frame"><img src="logos/Shchedryk_logo_fin_white_horizont_ua.svg" alt="White · horizontal · UA"></div>
+        <div class="caption">White · horizontal · UA (на темному)</div>
+      </div>
+      <div class="logo-tile sky">
+        <div class="frame"><img src="logos/Shchedryk_logo_fin_white_vertical_ua.svg" alt="White · vertical · UA"></div>
+        <div class="caption">White · vertical · UA (на брендовому)</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ПАТЕРНИ
+       ============================================================ -->
+  <section class="section" id="patterns">
+    <div class="section-head">
+      <h2>Патерни</h2>
+      <p>З брендбуку (с. «патерн») — три базові варіанти орнаменту з мотивами народного декору: Щедрик-пташка, човник, лотос, виноград, місяць, насіння. Підходить для обкладинок, форзаців, тла секцій-розділювачів, декоративних плашок.</p>
+    </div>
+
+    <div class="pattern-grid">
+      <div class="pattern-tile on-white">
+        <div class="swatch"></div>
+        <div class="meta"><strong>Білий фон · блакитні мотиви</strong><code>pattern-white.png</code></div>
+      </div>
+      <div class="pattern-tile on-cyan">
+        <div class="swatch"></div>
+        <div class="meta"><strong>Бірюзовий фон · білі мотиви</strong><code>pattern-cyan.png</code></div>
+      </div>
+      <div class="pattern-tile on-black">
+        <div class="swatch"></div>
+        <div class="meta"><strong>Чорний фон · білі мотиви</strong><code>pattern-black.png</code></div>
+      </div>
+    </div>
+
+    <div class="pattern-usage">
+      <div>
+        <strong>Де добре працює</strong>
+        Форзаци та задні обкладинки; нижня третина обкладинки під логотипом; розділювачі між секціями (Oxfam → WFP → ZOA); тло «Наші партнери».
+      </div>
+      <div>
+        <strong>Як використовувати</strong>
+        Як суцільне тло (a4/половина сторінки) або як «вирізаний кружок-медальйон» біля заголовка. Не на одній сторінці з великим фото — конкурує за увагу.
+      </div>
+      <div>
+        <strong>Чого уникати</strong>
+        Не накладати текст безпосередньо на патерн без плашки/підкладки. Не дрібнити нижче 60 мм у друці — губиться орнамент.
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ДЕКОРАТИВНІ ЕЛЕМЕНТИ
+       ============================================================ -->
+  <section class="section" id="motifs">
+    <div class="section-head">
+      <h2>Декоративні мотиви</h2>
+      <p>Базова мова форм для розгорток: круги, плашки, шини-акценти, спліти, чверть-кругові закінчення, медальйон з патерну. Використовувати стримано — 1–2 елементи на спред.</p>
+    </div>
+
+    <div class="motif-grid">
+      <div class="motif motif-sun-circle"><span class="label">Sun circle · кут</span></div>
+      <div class="motif motif-sky-circle"><span class="label">Sky-deep dot · акцент</span></div>
+      <div class="motif motif-yellow-ring"><span class="label">Yellow ring · контур</span></div>
+      <div class="motif motif-sky-rail"><span class="label">Sky rail · ліва шина</span></div>
+      <div class="motif motif-sky-split"><span class="label">Sky split · 58/42</span></div>
+      <div class="motif motif-gradient-cover"><span class="label">Gradient · обкладинка</span></div>
+      <div class="motif motif-rule"><span class="label">Sun rule · підкреслення</span></div>
+      <div class="motif motif-quarter"><span class="label">Quarter corners · бейдж</span></div>
+      <div class="motif motif-dots"><span class="label">Dot scatter · акцентне тло</span></div>
+      <div class="motif motif-badge"><span class="label">Badge token · форзац</span></div>
+      <div class="motif motif-headline-wave"><span class="label">Headline wave · під заголовком</span></div>
+      <div class="motif motif-pattern-coin"><span class="label">Pattern coin · медальйон</span></div>
+      <div class="motif motif-bracket"><span class="label">Brackets · обрамлення довідки</span></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       НАПРЯМКИ РОБОТИ
+       ============================================================ -->
+  <section class="section" id="directions">
+    <div class="section-head">
+      <h2>Напрямки роботи</h2>
+      <p>Чотири кольорові категорії з ТЗ: FSLC (продовольча допомога), WASH (вода, санітарія, гігієна), PROTECTION (психосоціальна підтримка), SHELTER (зимування, непродовольчі товари).</p>
+    </div>
+
+    <div class="directions">
+      <div class="dir fslc">
+        <div>
+          <div class="code">FSLC</div>
+          <div class="name">Продовольча допомога та засоби до існування</div>
+        </div>
+      </div>
+      <div class="dir wash">
+        <div>
+          <div class="code">WASH</div>
+          <div class="name">Вода, санітарія, гігієна</div>
+        </div>
+      </div>
+      <div class="dir prot">
+        <div>
+          <div class="code">PROTECTION</div>
+          <div class="name">Психосоціальна підтримка та соц. супровід</div>
+        </div>
+      </div>
+      <div class="dir shel">
+        <div>
+          <div class="code">SHELTER</div>
+          <div class="name">Тверде паливо, підготовка до зимового періоду</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       КОНТЕНТ-БЛОКИ
+       ============================================================ -->
+  <section class="section" id="components">
+    <div class="section-head">
+      <h2>Контент-блоки</h2>
+      <p>Готові компоненти, які повторно з'являються в розворотах: статистичні картки, фактбокси, виноски, мета-стрічки, темна плашка для гарячої лінії.</p>
+    </div>
+
+    <div class="blocks-grid">
+
+      <div class="demo-card">
+        <div class="meta-tag">Stat card · sky-pale</div>
+        <div class="stat-card">
+          <div class="num">16 000</div>
+          <div class="label">осіб скористалися порталом</div>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <div class="meta-tag">Yellow stat · sun circle</div>
+        <div class="yellow-stat">
+          <div class="circle">9 357</div>
+          <div class="label">людей отримали консультації гарячої лінії</div>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <div class="meta-tag">Big cyan · хедлайн числа</div>
+        <div class="big-cyan">
+          <div class="num">141</div>
+          <div class="label">особа пройшла навчання за різними напрямами</div>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <div class="meta-tag">Factbox · sky-soft</div>
+        <div class="factbox">
+          <div class="row">
+            <div>
+              <div class="k">Період</div>
+              <div class="v">Серпень 2023 — липень 2025</div>
+            </div>
+            <div>
+              <div class="k">Бюджет</div>
+              <div class="v">≈ 1,3 млн €</div>
+            </div>
+          </div>
+          <div class="mission">
+            <div class="k">Мета</div>
+            <div class="v" style="font-weight: 400;">Комплексна підтримка ВПО, репатріантів та громад Миколаївщини.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <div class="meta-tag">Navy tile · Гаряча лінія</div>
+        <div class="navy-tile">
+          <div class="k">Гаряча лінія</div>
+          <div class="phones">0800 337 845</div>
+          <small>пн–пт · 9:00 – 18:00</small>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <div class="meta-tag">Cyan rail · цитата / місія</div>
+        <div class="cyan-rail">
+          <div class="k">Місія</div>
+          <div class="body">
+            «Створювати умови для розвитку кожної людини, забезпечуючи захист,
+            рівні можливості та задоволення потреб».
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-card" style="grid-column: 1 / -1;">
+        <div class="meta-tag">Meta strip · під заголовком розвороту</div>
+        <div class="meta-strip">
+          <div>
+            <div class="k">Період</div>
+            <div class="v">Серпень 2023 — липень 2025</div>
+          </div>
+          <div>
+            <div class="k">Бюджет</div>
+            <div class="v">≈ 1,3 млн €</div>
+          </div>
+          <div>
+            <div class="k">Мета</div>
+            <div class="v text">Комплексна підтримка ВПО, репатріантів та громад Миколаївщини через відновлення інфраструктури, надання соціально-психологічних послуг та стимулювання економічної стійкості регіону.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<footer class="site">
+  <div class="inner">
+    <span>© 2026 БО «Благодійний Фонд Щедрик» · UI Kit для брошури «Щедрий вісник 2025»</span>
+    <span>Дизайн та верстка: Valentyn Ihnatov</span>
+  </div>
+</footer>
+
+</body>
+</html>
