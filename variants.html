@@ -48,8 +48,13 @@
     </button>
     <button class="variants-tab" data-variant="c">
       <div class="letter">C</div>
-      <div class="name">Декоративний</div>
-      <div class="tag">Хвилі · патерни · ініціали</div>
+      <div class="name">Wave Panel</div>
+      <div class="tag">Booklet · циан-хвилі</div>
+    </button>
+    <button class="variants-tab" data-variant="d">
+      <div class="letter">D</div>
+      <div class="name">Watermark</div>
+      <div class="tag">Стікер · sparkles</div>
     </button>
   </div>
 
@@ -147,12 +152,11 @@
   <div class="variant-panel" data-variant="c">
     <div class="variant-head">
       <div>
-        <h2>C — Декоративний</h2>
+        <h2>C — Wave Panel</h2>
         <p>
-          Підкреслено-декоративний з домінантою жовтого: ініціали у sun-кругах
-          відкривають абзаци, sun-stat виносить ключові цифри в круги, sun-rail
-          обрамляє цитати та місію. Один хвилястий divider перед слоганом на
-          фінальній сторінці як акцент-завершення.
+          За реальним booklet-ом Щедрика: циан-панелі з хвилястими крайками,
+          великі білі цифри на циан-фоні, фото з заокругленими кутами,
+          циан-пігулки з білими іконками на сторінці контактів.
         </p>
       </div>
       <div class="variant-actions">
@@ -160,10 +164,10 @@
       </div>
     </div>
     <div class="signature-tags">
-      <span class="signature-tag">декоративні ініціали в sun-кругах</span>
-      <span class="signature-tag">sun-stat для ключових цифр</span>
-      <span class="signature-tag">sun-rail у цитатах та callout</span>
-      <span class="signature-tag">wave-divider як signature finale</span>
+      <span class="signature-tag">циан-панелі з хвилястими крайками</span>
+      <span class="signature-tag">великі білі числа на циан</span>
+      <span class="signature-tag">циан-пігулки для іконок</span>
+      <span class="signature-tag">фото з заокругленими кутами</span>
     </div>
     <div class="spreads-grid">
       <div class="spread" data-src="variants/variant_c_1.png">
@@ -185,6 +189,52 @@
       <div class="spread" data-src="variants/variant_c_7.png">
         <span class="label">Контакти</span>
         <img src="variants/variant_c_7.png" alt="C · Контакти" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <!-- Variant D — Watermark / Sparkles -->
+  <div class="variant-panel" data-variant="d">
+    <div class="variant-head">
+      <div>
+        <h2>D — Watermark / Sparkles</h2>
+        <p>
+          За стікерами і вітальними листівками Щедрика: світлий waterмарк з
+          фірмового патерну на білому, циан-сяйва-зірочки розкидані як декор,
+          циан-пігулки з білими іконками-літерами для контактів, дружня
+          візуальна мова.
+        </p>
+      </div>
+      <div class="variant-actions">
+        <a class="btn btn-primary" href="variants/variant_d.pdf" target="_blank">PDF (7 сторінок)</a>
+      </div>
+    </div>
+    <div class="signature-tags">
+      <span class="signature-tag">циан-сяйва-зірочки</span>
+      <span class="signature-tag">циан-пігулки для контактів</span>
+      <span class="signature-tag">світлий waterмарк з патерну</span>
+      <span class="signature-tag">фото з заокругленими кутами</span>
+    </div>
+    <div class="spreads-grid">
+      <div class="spread" data-src="variants/variant_d_1.png">
+        <span class="label">Обкладинка</span>
+        <img src="variants/variant_d_1.png" alt="D · Обкладинка" loading="lazy">
+      </div>
+      <div class="spread" data-src="variants/variant_d_2.png">
+        <span class="label">Зміст</span>
+        <img src="variants/variant_d_2.png" alt="D · Зміст" loading="lazy">
+      </div>
+      <div class="spread full" data-src="variants/variant_d_spread1.png">
+        <span class="label">Що таке Щедрик · Oxfam: вступ</span>
+        <img src="variants/variant_d_spread1.png" alt="D · Розворот 1" loading="lazy">
+      </div>
+      <div class="spread full" data-src="variants/variant_d_spread2.png">
+        <span class="label">Oxfam: цифри · Команда</span>
+        <img src="variants/variant_d_spread2.png" alt="D · Розворот 2" loading="lazy">
+      </div>
+      <div class="spread" data-src="variants/variant_d_7.png">
+        <span class="label">Контакти</span>
+        <img src="variants/variant_d_7.png" alt="D · Контакти" loading="lazy">
       </div>
     </div>
   </div>
@@ -218,7 +268,7 @@
   tabs.forEach(t => t.addEventListener('click', () => activate(t.dataset.variant)));
 
   const hashV = (location.hash || '#a').replace('#', '');
-  if (['a','b','c'].includes(hashV)) activate(hashV);
+  if (['a','b','c','d'].includes(hashV)) activate(hashV);
 
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lbImg');
