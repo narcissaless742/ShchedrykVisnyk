@@ -566,23 +566,17 @@ a:hover { text-decoration: underline; }
   transform: translateX(-50%);
 }
 
-/* Хвиля «під» заголовком (бачимо на лідерах грамот) */
-.motif-headline-wave {
-  background:
-    linear-gradient(180deg, #fff 0 60%, var(--sky-pale) 60% 100%);
+/* Хвиля з внутрішньою лінією (новий брендовий мотив) */
+.motif-wave-line {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.motif-headline-wave::before {
-  content: "";
-  position: absolute;
-  left: -20px; right: -20px; top: 50%;
-  height: 30px;
-  background:
-    radial-gradient(ellipse 80px 30px at 10% 0%, var(--sky) 99%, transparent 100%),
-    radial-gradient(ellipse 80px 30px at 50% 100%, var(--sky-deep) 99%, transparent 100%),
-    radial-gradient(ellipse 80px 30px at 90% 0%, var(--sky) 99%, transparent 100%);
-  mask: linear-gradient(0deg, #000 50%, transparent 50%);
-  -webkit-mask: linear-gradient(0deg, #000 50%, transparent 50%);
-  transform: translateY(-50%);
+.motif-wave-line svg {
+  width: 86%;
+  height: auto;
+  display: block;
 }
 
 /* Pattern-як-акцент (вирізаний кружок патерну) */
@@ -1041,6 +1035,13 @@ a:hover { text-decoration: underline; }
   grid-template-columns: repeat(2, 1fr);
   gap: var(--r-3);
 }
+.spread.full {
+  grid-column: 1 / -1;
+}
+.spread.full .label::before {
+  content: "Розворот · ";
+  opacity: 0.7;
+}
 @media (max-width: 720px) {
   .spreads-grid { grid-template-columns: 1fr; }
 }
@@ -1107,7 +1108,102 @@ a:hover { text-decoration: underline; }
 }
 
 /* ============================================================
-   Hero — accent version (для index.html)
+   Concept picker (головна — лише навігація між варіантами)
+   ============================================================ */
+
+.picker-head {
+  text-align: center;
+  padding: var(--r-7) 0 var(--r-5);
+  border-bottom: 1px solid var(--hair);
+  margin-bottom: var(--r-6);
+}
+.picker-head .kicker { display: block; margin-bottom: var(--r-2); }
+.picker-head h1 {
+  font-family: var(--font-head);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin: 0 0 var(--r-3);
+}
+.picker-head .picker-sub {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: var(--graphite);
+  line-height: 1.55;
+}
+
+.concept-picker {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--r-4);
+  margin-bottom: var(--r-8);
+}
+
+.concept-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--hair);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+}
+.concept-card:hover {
+  text-decoration: none;
+  border-color: var(--sky-deep);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgba(0,165,214,0.16);
+}
+
+.concept-card .cover-frame {
+  aspect-ratio: 297 / 210;
+  background: var(--sky-pale);
+  overflow: hidden;
+  border-bottom: 1px solid var(--hair);
+}
+.concept-card .cover-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.concept-card .meta {
+  padding: var(--r-4);
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: var(--r-3);
+  align-items: start;
+}
+.concept-card .letter {
+  font-family: var(--font-head);
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--sky-deep);
+  line-height: 1;
+}
+.concept-card h2 {
+  font-family: var(--font-head);
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+.concept-card p {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--graphite);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .concept-picker { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   Hero — accent version (для process.html)
    ============================================================ */
 
 .hero-accent {
