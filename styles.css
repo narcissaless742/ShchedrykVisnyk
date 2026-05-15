@@ -235,6 +235,14 @@ a:hover { text-decoration: underline; }
 
 .topnav img { height: 28px; }
 .topnav .title { font-weight: 700; }
+.topnav .brand {
+  display: flex;
+  align-items: center;
+  gap: var(--r-3);
+  text-decoration: none;
+  color: var(--ink);
+}
+.topnav .brand:hover { text-decoration: none; opacity: 0.85; }
 .topnav nav { display: flex; gap: var(--r-4); margin-left: auto; flex-wrap: wrap; }
 .topnav nav a { color: var(--graphite); }
 .topnav nav a.active { color: var(--sky-deep); font-weight: 700; }
